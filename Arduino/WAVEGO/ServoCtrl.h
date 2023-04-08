@@ -26,7 +26,6 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40, IIC);
 //                 |
 //               Ground
 double Linkage_W = 19.15;   // The distance between wiggle servo and the plane of the leg linkages.
-double wiggleError = 0;
 
 //     <<<[S-A][S-B]<<<
 //         /     |
@@ -337,7 +336,7 @@ void wigglePlaneIK(double LA, double aIn, double bIn, uint8_t outputAlpha, uint8
     alpha = 90 - lambda + psi;
   }
   linkageBuffer[outputAlpha] = alpha;
-  linkageBuffer[outputLen]  = LB - wiggleError;
+  linkageBuffer[outputLen]  = LB;
 }
 
 // ||| ||| ||| ||| ||| |||
@@ -372,7 +371,7 @@ void wigglePlaneIK(double LA, double aIn, double bIn, uint8_t outputAlpha, uint8
 //     alpha = 90 - lambda + psi;
 //   }
 //   linkageBuffer[outputAlpha] = alpha;
-//   linkageBuffer[outputLen]  = LB - wiggleError;
+//   linkageBuffer[outputLen]  = LB;
 // }
 
 
