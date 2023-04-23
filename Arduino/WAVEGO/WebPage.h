@@ -115,7 +115,7 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
     .button4 {
         background-color: #e7e7e7;
         color: #000;
-        width: 120px
+        width: 130px
     }
 
     button:hover {
@@ -213,8 +213,14 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
                         <td align="center"><button class="button button4" id="Jump" onclick="fetch(document.location.origin+'/control?var=funcMode&val=4&cmd=0');">Jump</button></td>
                     </tr>
                     <tr>
+                        <td align="center"><button class="button button4" id="HandLeftShake" onclick="fetch(document.location.origin+'/control?var=funcMode&val=13&cmd=0');">HandLeftShake</button></td>
                         <td align="center"><button class="button button4" id="Rest" onclick="fetch(document.location.origin+'/control?var=funcMode&val=10&cmd=0');">Rest</button></td>
-                        <td align="center"><button class="button button4" id="Rest" onclick="fetch(document.location.origin+'/control?var=funcMode&val=11&cmd=0');">Pee</button></td>
+                        <td align="center"><button class="button button4" id="Squat" onclick="fetch(document.location.origin+'/control?var=funcMode&val=14&cmd=0');">Squat</button></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><button class="button button4" id="Yoga" onclick="fetch(document.location.origin+'/control?var=funcMode&val=12&cmd=0');">Yoga</button></td>
+                        <td align="center"><button class="button button4" id="Pee" onclick="fetch(document.location.origin+'/control?var=funcMode&val=11&cmd=0');">Pee</button></td>
+                    </tr>
                     <tr>
                         <td align="center"><button class="button button4" id="actionA" onclick="fetch(document.location.origin+'/control?var=funcMode&val=5&cmd=0');">ActionA</button></td>
                         <td align="center"><button class="button button4" id="actionB" onclick="fetch(document.location.origin+'/control?var=funcMode&val=6&cmd=0');">ActionB</button></td>

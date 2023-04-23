@@ -918,7 +918,7 @@ void functionRest(){
   }
 }
 
-void functionBailan(){
+void functionSquat(){
   for(float i = 0; i<=1; i+=0.02){
     singleLegCtrl(1,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MIN-10, i), besselCtrl(WALK_EXTENDED_Z, 2*WALK_EXTENDED_Z, i));
     singleLegCtrl(3,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MIN-10, i), besselCtrl(WALK_EXTENDED_Z, 2*WALK_EXTENDED_Z, i));
@@ -936,6 +936,30 @@ void functionBailan(){
 
     singleLegCtrl(2,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
     singleLegCtrl(4,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
+
+    GoalPosAll();
+    delay(1);
+  }
+}
+
+void functionYoga(){
+  for(float i = 0; i<=1; i+=0.02){
+    singleLegCtrl(2,  besselCtrl(WALK_EXTENDED_X, 0, i), besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MAX, i), besselCtrl(WALK_EXTENDED_Z, -15, i));
+    singleLegCtrl(4,  besselCtrl(WALK_EXTENDED_X, 0, i), besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MAX, i), besselCtrl(WALK_EXTENDED_Z, -15, i));
+    
+    singleLegCtrl(1,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MIN-10, i), besselCtrl(WALK_EXTENDED_Z, 2*WALK_EXTENDED_Z, i));
+    singleLegCtrl(3,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MIN-10, i), besselCtrl(WALK_EXTENDED_Z, 2*WALK_EXTENDED_Z, i));
+
+    GoalPosAll();
+    delay(1);
+  }
+  delay(3000);
+  for(float i = 0; i<=1; i+=0.02){
+    singleLegCtrl(2,  besselCtrl(0, WALK_EXTENDED_X, i), besselCtrl(WALK_HEIGHT_MAX, WALK_HEIGHT, i), besselCtrl(-15, WALK_EXTENDED_Z, i));
+    singleLegCtrl(4,  besselCtrl(0, WALK_EXTENDED_X, i), besselCtrl(WALK_HEIGHT_MAX, WALK_HEIGHT, i), besselCtrl(-15, WALK_EXTENDED_Z, i));
+
+    singleLegCtrl(1,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
+    singleLegCtrl(3,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
 
     GoalPosAll();
     delay(1);
@@ -980,6 +1004,53 @@ void functionHandshake(){
   for(float i = 0; i<=1; i+=0.02){
     singleLegCtrl(1,  besselCtrl(0, WALK_EXTENDED_X, i), besselCtrl(WALK_HEIGHT_MAX, WALK_HEIGHT, i), besselCtrl(-15, WALK_EXTENDED_Z, i));
     singleLegCtrl(3,  besselCtrl(WALK_RANGE/2+WALK_EXTENDED_X, WALK_EXTENDED_X, i), besselCtrl(WALK_HEIGHT_MIN, WALK_HEIGHT, i), besselCtrl(0, WALK_EXTENDED_Z, i));
+
+    singleLegCtrl(2,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
+    singleLegCtrl(4,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
+
+    GoalPosAll();
+    delay(1);
+  }
+}
+
+void functionLeftHandshake(){
+  for(float i = 0; i<=1; i+=0.02){
+    singleLegCtrl(1,  besselCtrl(WALK_EXTENDED_X, 0, i), besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MAX, i), besselCtrl(WALK_EXTENDED_Z, -15, i));
+    singleLegCtrl(3,  besselCtrl(WALK_EXTENDED_X, 0, i), besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MAX, i), WALK_EXTENDED_Z);
+
+    singleLegCtrl(2,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MIN-10, i), besselCtrl(WALK_EXTENDED_Z, 2*WALK_EXTENDED_Z, i));
+    singleLegCtrl(4,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT, WALK_HEIGHT_MIN-10, i), besselCtrl(WALK_EXTENDED_Z, 2*WALK_EXTENDED_Z, i));
+
+    GoalPosAll();
+    delay(1);
+  }
+
+
+  for(float i = 0; i<=1; i+=0.02){
+    singleLegCtrl(1,  besselCtrl(0, WALK_RANGE/2+WALK_EXTENDED_X, i), besselCtrl(WALK_HEIGHT_MAX, WALK_HEIGHT_MIN, i), besselCtrl(WALK_EXTENDED_Z, 0, i));
+
+    GoalPosAll();
+    delay(1);
+  }
+
+  for(int shakeTimes = 0; shakeTimes < 3; shakeTimes++){
+    for(float i = 0; i<=1; i+=0.03){
+      singleLegCtrl(1,  WALK_RANGE/2+WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN, WALK_HEIGHT_MIN+30, i), 0);
+
+      GoalPosAll();
+      delay(1);
+    }
+    for(float i = 0; i<=1; i+=0.03){
+      singleLegCtrl(1,  WALK_RANGE/2+WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN+30, WALK_HEIGHT_MIN, i), 0);
+
+      GoalPosAll();
+      delay(1);
+    }
+  }
+
+  for(float i = 0; i<=1; i+=0.02){
+    singleLegCtrl(3,  besselCtrl(0, WALK_EXTENDED_X, i), besselCtrl(WALK_HEIGHT_MAX, WALK_HEIGHT, i), besselCtrl(-15, WALK_EXTENDED_Z, i));
+    singleLegCtrl(1,  besselCtrl(WALK_RANGE/2+WALK_EXTENDED_X, WALK_EXTENDED_X, i), besselCtrl(WALK_HEIGHT_MIN, WALK_HEIGHT, i), besselCtrl(0, WALK_EXTENDED_Z, i));
 
     singleLegCtrl(2,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
     singleLegCtrl(4,  -WALK_EXTENDED_X, besselCtrl(WALK_HEIGHT_MIN-10, WALK_HEIGHT, i), besselCtrl(2*WALK_EXTENDED_Z, WALK_EXTENDED_Z, i));
@@ -1075,7 +1146,7 @@ void functionActionB(){
 
 
 void functionActionC(){
-  functionBailan();
+
 }
 
 
@@ -1164,6 +1235,18 @@ void robotCtrl(){
       Serial.println("Pee");
       functionPee(); 
       funcMode = 0;                  
+    }else if(funcMode == 12){
+      Serial.println("Yoga");
+      functionYoga(); 
+      funcMode = 0;                  
+    }else if (funcMode == 13){
+      Serial.println("handLeftshake");
+      functionLeftHandshake();
+      funcMode = 0;
+    }else if (funcMode == 14){
+      Serial.println("Squat");
+      functionSquat();
+      funcMode = 0;
     }
     setSingleLED(0,matrix.Color(0, 128, 255));
     setSingleLED(1,matrix.Color(0, 128, 255));
