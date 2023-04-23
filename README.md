@@ -1,18 +1,21 @@
 # WAVEGO
 WAVEGO, An Open Source Bionic Dog-Like Robot Powered By ESP32 &amp; Raspberry Pi.
 
+Forward:   
+http://192.168.4.1/control?var=move&val=1&cmd=0  
+http://192.168.4.1/control?var=move&val=3&cmd=0
 
-Forward: http://192.168.4.1/control?var=move&val=1&cmd=0  
-         http://192.168.4.1/control?var=move&val=3&cmd=0
+LEFT:   
+http://192.168.4.1/control?var=move&val=2&cmd=0  
+http://192.168.4.1/control?var=move&val=6&cmd=0
 
-LEFT:    http://192.168.4.1/control?var=move&val=2&cmd=0  
-         http://192.168.4.1/control?var=move&val=6&cmd=0
-
-Right:   http://192.168.4.1/control?var=move&val=4&cmd=0  
-		 http://192.168.4.1/control?var=move&val=6&cmd=0
+Right:   
+http://192.168.4.1/control?var=move&val=4&cmd=0  
+http://192.168.4.1/control?var=move&val=6&cmd=0
 		 
-Reverse: http://192.168.4.1/control?var=move&val=5&cmd=0  
-         http://192.168.4.1/control?var=move&val=3&cmd=0
+Reverse：  
+http://192.168.4.1/control?var=move&val=5&cmd=0  
+http://192.168.4.1/control?var=move&val=3&cmd=0
 
 Steady:  http://192.168.4.1/control?var=funcMode&val=1&cmd=0
 		 
